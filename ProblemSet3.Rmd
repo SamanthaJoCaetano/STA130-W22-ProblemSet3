@@ -1,0 +1,382 @@
+---
+title: "STA130 -- Fall 2022"
+author: "[ADD YOUR & STUDENT NUMBER NAME HERE]"
+subtitle: Week 3 Problem Set
+output:
+  pdf_document: default
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+library(openintro)
+```
+
+
+# Instructions
+
+## How do I hand in these problems for the Thursday deadline?
+
+Your complete .Rmd file that you create for these practice problems AND the resulting pdf (i.e., the one you 'Knit to PDF' from your .Rmd file) must be uploaded into a Quercus assignment (link: [https://q.utoronto.ca/courses/253019/assignments/800530](https://q.utoronto.ca/courses/253019/assignments/800530)) by 11:59AM ET, on Thursday, January 27th. Late problem sets are not accepted.
+
+
+
+# Problem set grading
+
+There are two components to your problem set.
+
+- Part one is R based: there is 1 mandatory question in part one, and additional optional questions. *Optional R based questions are highly recommended as they will help prepare you for larger assessments (and help improve your R skills, of course!); but, they are part of the grading for the weekly problem sets.*
+- Part two is (more) writing based: all of part two is mandatory. *We recommend you use a word processing software like Microsoft Word to check for grammar errors in your written work. Note: there can be issues copying from Word to R Markdown so it may be easier to write in the RMarkdown file first and then copy the text to Word. Then you can make any changes flagged in Word directly in your RMarkdown file.*
+
+
+
+# Part 1
+
+## Question 1 [Required]
+
+The code below loads the `VGAMdata` package (so you can access the datasets it contains) and the `tidyverse` package (so you can use the functions it contains) and glimpses the `oly12` dataset, which you will use for this question
+
+```{r}
+library(tidyverse)
+library(VGAMdata)
+glimpse(oly12)
+```
+
+### (a) In this week's slides/videos, we looked at data for each country which participated in the 2012 Olympics (e.g. size of each country's Olympic team, number of medals won, etc.), and there was one observation (i.e. one row) for each participating country. What does each row in the `oly12` dataset represent?  Hint: Type `?oly12` in the console (bottom left) to view the help file for the `oly12` dataset (it will appear in the Help tab in the bottom right corner of RStudio)
+
+<Answer>
+
+### (b) Use the `oly12` dataset to determine the number of athletes who represented Canada (`Canada`) or the United States (`United States of America`) in the 2012 Olympic Games. Note: there is more than one way to do this, but you need to use the `oly12` dataset for this question, not the dataset from the slides/videos.
+
+```{r}
+# Type your code here
+
+
+```
+
+<Answer>
+
+### (c) Create a new dataframe called `oly12_FemaleGymnasts` which contains only data for female athletes who competed in Gymnastics (`Gymnastics - Artistic`) or Swimming (`Gymnastics - Rhythmic`) (look at values of the `Sport` variable).
+
+```{r}
+
+
+```
+
+### (d) Compare the age distribution for female olympic athletes competing in Artistic Gymnastics to the age distribution of female olympic athletes competing in Rhythmic Gymnastics using both boxplots and histograms.  
+
+```{r}
+  
+
+```
+
+
+### (e)  Based on the plots you created in (d), answer the following questions:
+
+### (i) Are the age distributions of female rhythmic gymnasts and female artistic gymnasts symmetrical or skewed?
+
+<Answer>
+
+### (ii) Compare the medians, 25th percentiles and 75th percentiles for ages of female rhythmic gymnasts and female artistic gymnasts?
+
+<Answer>
+
+### (iii) Based only on the histogram and boxplots, predict whether the standard deviation of the ages is similar or different.  Justify your answer in 2-3 sentences.
+
+<Answer>
+
+### (f) Create a summary table reporting the minimum, maximum, mean, median, and standard deviation of ages forfemale track/field athletes and female swimmers.  Compare these values to the prediction you made in (e-iii)
+
+```{r}
+# Code Answer
+
+```
+
+
+<Answer>
+
+
+### (g)  Use the `arrange` function to find the name, age and sport (ONLY NAME, AGE and SPORT) of the 6 youngest female athletes who competed in the 2012 Olympics.
+
+```{r}
+# Write code here
+
+```
+
+
+### (h)  Use the `arrange` and `desc` functions to find the name and age of the 6 oldest athletes who competed in the 2012 Olympics.
+
+```{r}
+
+
+
+```
+
+### (i)  Modify your code from (g) and (h) to find the name, Age, Sport, and event for the 6 youngest and 6 oldest competitors who won gold medals at the 2012 olympics.
+
+```{r}
+ 
+
+```
+
+
+### (j) Create a new variable called `total_medals` and create a new tibble called `oly12_OneMedalClub` that contains athletes who won exactly one medal at the 2012 olympics.
+
+```{r}
+
+
+
+```
+
+
+### (k) Uncomment the code below and run the glimpse of the data created in part (j).
+
+```{r}
+# glimpse(oly12_OneMedalClub)
+```
+
+
+
+
+\newpage
+
+
+## Question 2 [Optional] 
+
+At the time it departed from England in April 1912, the RMS Titanic was the largest ship in the world. In the night of April 14th to April 15th, the Titanic struck an iceberg and sank approximately 600km south of Newfoundland (a province in eastern Canada). Many people perished in this accident. The code below loads data about the passengers who were on board the Titanic at the time of the accident.
+
+```{r}
+titanic <- read_csv("titanic.csv")
+glimpse(titanic)
+```
+
+### (a) Often, before you start working with a dataset you need to clean it.  
+
+### (i) Since many of their values are missing or unclear, modify the `titanic` data frame by removing the following variables: `Ticket_No`, `Boat_or_Body`, `CLass_Dept`, `Class_Full`.
+
+```{r}
+
+
+
+```
+
+### (ii) The variable `Adut_or_Chld` indicates which passengers were adults and which were children. Change the name of this variable to `Adult_or_Child`. `MWC` is a little more specific, recording whether the passenger was a man, woman or child. To make this variable name clearer, change the name of `MWC` to `Man_Woman_or_Child`. Hint: the use `rename()` function from the `dplyr` library to change the name of an existing variable.  For example, the following code would change the name of the "PlaceOB" variable in the `oly12` dataset to "Place_of_birth":
+```{r}
+# Note 1: Don't forget to overwrite the original tibble (i.e. save the modified data in place of the original tibble), otherwise the change won't be permanent
+# Note 2: When using the rename function, put the new variable name on the left of the equals sign, and the old variable name on the right. This is similar to the mutate function, where you put the name of the new variable on the left, and the formula to calculate it on the right.
+oly12 <- oly12 %>% rename(Place_of_birth = PlaceOB)
+```
+
+```{r}
+
+
+```
+
+
+### (b) Create a summary table reporting the number of passengers on the Titanic (n), the number of passengers who survied (n_surv), and the proportion of passengers who survived (prop_surv).
+```{r}
+
+
+```
+
+### (c) Calculate the proportion of deaths for the following groups of passengers.  Note that there is more than one way to do this in each of the parts below.  
+
+### (i) For men, women, and children:
+```{r}
+
+
+```
+
+### (ii) For passengers aged between 25-40 years of age:
+```{r}
+
+
+```
+
+### (iii) For men, women, and children among the passengers who paid more than 50 British pounds for their tickets: 
+```{r}
+ 
+```
+
+### (iv) Write several sentences interpreting the summary tables you created in parts (i)-(iii) of this question.
+
+<Write answer here.>
+
+### (d) What was the most common job among passengers of the Titanic? Write 1-2 sentences explaining your answer. Hint: create a summary table reporting the number of passengers with each job title, and sort it from most common to least common job.
+```{r}
+
+
+
+```
+
+<Answer>
+
+
+### (e) Plot the age distribution for passengers with the job "General Labourer", and describe this distribution in 1-2 sentences.
+```{r}
+
+
+
+```
+
+
+<Answer here>
+
+
+### (f) Were any of the general labourers on the titanic women? If so, how many?
+
+```{r}
+
+# Note: there is more than one way to do this
+
+
+```
+
+
+
+### (g) What are the names of the passengers with the top 4 most expensive tickets? Did these passengers survive the accident?
+```{r}
+
+
+
+```
+
+
+
+
+### (h) In this question, you will compare the distribution of ticket prices for survivors and non-survivors of the Titanic using both visualizations and summary tables.
+
+### (i) Construct two histograms to visualize the distribution of ticket prices for survivors and non-survivors (i.e. one histogram for survivors and one for non-survivors). Write 2-3 sentences comparing the two distributions based on these plots.
+```{r, fig.width=6, fig.height=3}
+
+
+
+```
+
+
+
+
+### (ii) Construct a pair of boxplots to visualize the distribution of ticket prices for survivors and non-survivors. Write 2-3 sentences comparing the two distributions based on these plots.
+```{r}
+
+
+```
+
+
+### (iii) Construct a summary table with the minimum, first quartile, median, mean, third quartile, and maximum ticket price for survivors and non-survivors.  Hint: The code below gives an example of the `quantile` function, which you'll use to calculate Q1 and Q3, as well as the na.rm=TRUE option:
+```{r}
+#### Example code to demo quantile() function and is.na ####
+x <- c(1,2,3,4,5,6,NA,10)
+quantile(x, probs = 0.25, na.rm=TRUE); # Calculate the first quartile (25% quantile), and tell R to exclude any missing values, if there are any
+quantile(x, probs = 0.75, na.rm=TRUE); # Calculate the third quartile (75% quantile), and tell R to exclude any missing values, if there are any
+
+# If there are missing values in the vector you're working with (or in one of the columns of a tibble), you'll want to use the na.rm=FALSE option in functions like mean, median, etc, otherwise you will just get values of NA.  Run the following code to see this in action
+mean(x)
+mean(x, na.rm=TRUE)
+median(x)
+median(x, na.rm=TRUE)
+```
+
+
+**Write 2-3 sentences comparing the two distributions based on this summary table.**
+
+
+```{r}
+
+```
+
+
+
+### (iv) Comment on the strengths and weaknesses of each of the visualizations and summary table you constructed in parts (i), (ii), and (iii)
+
+
+
+
+## Question 3 [Optional]
+
+The code below reads in data about books sold on Amazon (https://dasl.datadescription.com/datafile/amazon-books/).  The data frame containing the book data is named `books`. Note that the height (`Height`), width (`Width`) and thickness (`Thick`) of books in this data frame are measured in inches.
+
+```{r}
+library(tidyverse) # Load the tidyverse package so it is available to use 
+books <- read.csv("amazonbooks.csv")
+```
+
+### (a) What is the name of the book(s) with the smallest number of pages in this sample of books, and how many pages does it have?
+```{r}
+
+
+
+```
+
+
+
+### (b) Create a summary table which reports the total number of books written by each author and the mean and variance of the  number of pages per book for each author, for the books represented in this sample of books. 
+
+```{r}
+
+
+```
+
+### (c) Modify your code from (b) so to create a new summary table which contains only information for authors who wrote more than 2 books, and sort them in decreasing order of number of books written.
+```{r}
+
+
+```
+
+
+# Part 2 [Required]
+
+
+## Writing prompt
+
+You have just been hired by a consultancy company. Congratulations! They are doing a report on each Olympics for the past 10 years. Given your recent experience in STA130, you ask to be responsible for the 2012 summary. Write a short report to your boss on information that can be gleaned about the ages of the athletes (since your boss' favourite sports are badminton and weightlifting, you know she will be happy if your summary talks about these sports specifically, but you can talk about other interesting of features athletes' ages which can be learned from your plots and tables.)
+
+
+### Important Features to Include
+
+-	Start off with a small introduction. You should include 1 or 2 sentences to draw your reader in, and then explain what you will be discussing. 
+-	Make sure to include at least 1 figure to help your reader visualize what you are speaking about. 
+-	You want to show off all the knowledge you gained in STA130 so you must include at least 2 vocabulary words. However, your boss isn't a statistician, therefore you must define any vocabulary terms you used.
+-	Make sure to finish with a conclusion to remind your boss of the key take home points from your summary about the athletes' ages.
+
+
+
+
+### Some general reminders 
+
+-	Try to not spend more than 20 minutes on the prompt.
+-	Aim for more than 200 words but less than 400 words.
+-	Use full sentences.
+-	Grammar is not the main focus of the assessment, but it is important that you communicate in a clear and professional manner. Remember, this is meant to be a small report to your boss! So you should not include any slang or emojis. 
+-	Remember that you have only conducted a preliminary analysis and therefore you may not have a definitive answer. That is totally ok! It is hard to ever say something is 100% one way or another. Therefore, you will want to try to incorporate some hedging language into your writing. You can find more information about hedging in a short video here: https://q.utoronto.ca/courses/206597/pages/writing-skills-videos?module_item_id=2116409
+
+
+ 
+
+## Vocabulary 
+
+- Cleaning data
+- Tidy data
+- Removing a column
+- Extracting a subset of variables
+- Filtering a tibble based on a condition (e.g. based on the values in one or more of the variables/columns)
+- Sorting data based on the values of a variable
+- Renaming the variables
+- Grouping categories
+- Defining new variables
+- Producing new data frames
+- Handling missing values (NAs)
+- Creating summary tables
+
+*You may also find these vocabulary words from last week useful with your writing this week*
+
+- Where are the data centered (towards the left, right, middle) 
+- How much spread (relative to what?) 
+- Shape: symmetric, left-skewed, right-skewed 
+- The tails of the distribution (heavy-tailed or thin-tailed) 
+- Modes: where, how many, unimodal, bimodal, multimodal, uniform 
+- Outliers, extreme values
+- Frequency (which category occurred the most or least often; data concentrated near a particular value or category) 
+- Mean (average), median, mode 
+- standard deviation, interquartile range 
+
+
