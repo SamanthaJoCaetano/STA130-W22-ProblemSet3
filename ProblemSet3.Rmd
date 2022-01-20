@@ -1,5 +1,5 @@
 ---
-title: "STA130 -- Fall 2022"
+title: "STA130 -- Winter 2022"
 author: "[ADD YOUR & STUDENT NUMBER NAME HERE]"
 subtitle: Week 3 Problem Set
 output:
@@ -347,7 +347,7 @@ You have just been hired by a consultancy company. Congratulations! They are doi
 -	Aim for more than 200 words but less than 400 words.
 -	Use full sentences.
 -	Grammar is not the main focus of the assessment, but it is important that you communicate in a clear and professional manner. Remember, this is meant to be a small report to your boss! So you should not include any slang or emojis. 
--	Remember that you have only conducted a preliminary analysis and therefore you may not have a definitive answer. That is totally ok! It is hard to ever say something is 100% one way or another. Therefore, you will want to try to incorporate some hedging language into your writing. You can find more information about hedging in a short video here: https://q.utoronto.ca/courses/206597/pages/writing-skills-videos?module_item_id=2116409
+-	Remember that you have only conducted a preliminary analysis and therefore you may not have a definitive answer. That is totally ok! It is hard to ever say something is 100% one way or another. Therefore, you will want to try to incorporate some hedging language into your writing. You can find more information about hedging in a short video here: [https://q.utoronto.ca/courses/253019/pages/writing-skills-videos](https://q.utoronto.ca/courses/253019/pages/writing-skills-videos-m3-problem-set)
 
 
  
