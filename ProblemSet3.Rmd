@@ -84,7 +84,7 @@ glimpse(oly12)
 
 <Answer>
 
-### (f) Create a summary table reporting the minimum, maximum, mean, median, and standard deviation of ages forfemale track/field athletes and female swimmers.  Compare these values to the prediction you made in (e-iii)
+### (f) Create a summary table reporting the minimum, maximum, mean, median, and standard deviation of ages for female rhythmic and female artistic gymnasts.  Compare these values to the prediction you made in (e-iii)
 
 ```{r}
 # Code Answer
